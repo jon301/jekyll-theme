@@ -44,3 +44,6 @@ gems:
 # jekyll-paginate
 paginate: 5
 paginate_path: "/page/:num/"
+
+# disqus
+disqus_shortname: your_disqus_shortname
