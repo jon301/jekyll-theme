@@ -47,3 +47,6 @@ paginate_path: "/page/:num/"
 
 # disqus
 disqus_shortname: your_disqus_shortname
+
+# google analytics
+ga_tracking_id: UA-XXXXX-Y
