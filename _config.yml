@@ -54,3 +54,9 @@ disqus_shortname: your_disqus_shortname
 
 # google analytics
 ga_tracking_id: UA-XXXXX-Y
+
+# social networks
+social:
+  linkedin:
+  twitter:
+  github:
