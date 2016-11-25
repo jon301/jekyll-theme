@@ -1,0 +1,20 @@
+---
+layout: page
+title: Archive
+permalink: "/archive/"
+order: 4
+exclude: true
+---
+
+<div class="archive">
+  <h3>An archive of posts sorted by date</h3>
+
+  <ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

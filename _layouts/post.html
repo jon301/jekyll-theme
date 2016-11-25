@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<section class="post">
+
+  <header>
+    <h2>{{ page.title }}</h2>
+
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+
+    {% if page.categories.size > 0 %}
+      <span>Posted in
+        {% for category in page.categories %}
+          <a href="{{ site.url }}/categories/#{{ category }}">{{ category }}</a>
+          {% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </span>
+    {% endif %}
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+
+</section>
+
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}

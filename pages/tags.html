@@ -1,0 +1,45 @@
+---
+layout: page
+title: Tags
+permalink: "/tags/"
+order: 3
+---
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tags_list = site_tags | split:',' | sort %}
+
+<div class="tags">
+  <h3>An archive of posts sorted by tag</h3>
+
+  <ul>
+    {% for item in (0..site.tags.size) %}
+      {% unless forloop.last %}
+        {% capture tag %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+        <li>
+          <a href="#{{ tag }}">{{ tag }} ({{ site.tags[tag].size }})</a>
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+
+  <div>
+    {% for item in (0..site.tags.size) %}
+      {% unless forloop.last %}
+        {% capture tag %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+        <div>
+          <h4 id="{{ tag }}">{{ tag }}</h4>
+          <ul>
+            {% for post in site.tags[tag] %}
+              {% if post.title != null %}
+                <li>
+                  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>

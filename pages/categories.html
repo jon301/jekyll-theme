@@ -1,0 +1,45 @@
+---
+layout: page
+title: Categories
+permalink: "/categories/"
+order: 2
+---
+
+{% capture site_categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign categories_list = site_categories | split:',' | sort %}
+
+<div class="categories">
+  <h3>An archive of posts sorted by categories</h3>
+
+  <ul>
+    {% for item in (0..site.categories.size) %}
+      {% unless forloop.last %}
+        {% capture category %}{{ categories_list[item] | strip_newlines }}{% endcapture %}
+        <li>
+          <a href="#{{ category }}">{{ category }} ({{ site.categories[category].size }})</a>
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+
+  <div>
+    {% for item in (0..site.categories.size) %}
+      {% unless forloop.last %}
+        {% capture category %}{{ categories_list[item] | strip_newlines }}{% endcapture %}
+        <div>
+          <h4 id="{{ category }}">{{ category }}</h4>
+          <ul>
+            {% for post in site.categories[category] %}
+              {% if post.title %}
+                <li>
+                  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>
