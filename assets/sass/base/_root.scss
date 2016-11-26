@@ -13,4 +13,136 @@ html {
  */
 *, ::before, ::after {
   box-sizing: inherit;
-} 
+}
+
+
+/**
+ * Custom styles
+ */
+html {
+  height: 100%;
+  max-height: 100%;
+  font-size: $base-font-size;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100%;
+  max-height: 100%;
+  font-family: $base-font-family;
+  letter-spacing: .01rem;
+  font-size: 1.8em;
+  line-height: 1.75em;
+  color: $base-color;
+  -webkit-font-feature-settings: 'kern' 1;
+  -moz-font-feature-settings: 'kern' 1;
+  -o-font-feature-settings: 'kern' 1;
+  text-rendering: geometricPrecision;
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6, input, label, select, table, textarea {
+  font-family: $secondary-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $heading-color;
+  line-height: 1.3em;
+  margin: 0 0 .4em 0;
+  font-weight: 600
+}
+
+
+h1 {
+  font-size: 5rem;
+  letter-spacing: -2px;
+  text-indent: -3px
+}
+
+h2 {
+  font-size: 3.6rem;
+  letter-spacing: -1px
+}
+
+h3 {
+  font-size: 3rem
+}
+
+h4 {
+  font-size: 2.5rem
+}
+
+h5 {
+  font-size: 2rem
+}
+
+h6 {
+  font-size: 2rem
+}
+
+/**
+ * Links
+ */
+a {
+  color: $link-color;
+  transition: color .2s ease
+}
+
+a:hover {
+  color: $link-hover-color;
+}
+
+/**
+ * Lists
+ */
+dl, ol, p, ul {
+  margin: 0 0 1.75em 0;
+}
+
+ol, ul {
+  padding-left: 3rem
+}
+
+ol ol, ol ul, ul ol, ul ul {
+  margin: 0 0 .4em 0;
+  padding-left: 2em
+}
+
+dl dt {
+  float: left;
+  width: 180px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+  margin-bottom: 1em
+}
+
+dl dd {
+  margin-left: 200px;
+  margin-bottom: 1em
+}
+
+li {
+  margin: .4em 0
+}
+
+li li {
+  margin: 0
+}
+
+/**
+ * Rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: $horizontal-rule-color 1px solid;
+  margin: 3.2em 0;
+  padding: 0
+}

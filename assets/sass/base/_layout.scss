@@ -1,0 +1,102 @@
+html {
+  font-size: 8px;
+  transition: font-size .2s ease;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 10px;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex-grow: 1;
+    padding-top: 40px;
+    transition: padding-top .2s ease;
+
+    @media only screen and (min-width: 700px) {
+      padding-top: 80px;
+    }
+
+    #disqus_thread {
+      padding: 5% 10%;
+    }
+
+    > header, > nav, > section,  {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+
+    > header {
+      margin-bottom: 2em;
+
+      h1 a {
+        text-decoration: none;
+      }
+
+      h2 {
+        font-size: 2.2em;
+        white-space: nowrap;
+      }
+    }
+
+    > nav {
+      margin-bottom: 4em;
+      word-spacing: 0.5em;
+    }
+
+    > section {
+      > header {
+        margin-bottom: 2em;
+      }
+
+      p, ul, .highlighter-rouge {
+        + h3, h4, h5, h6 {
+          margin-top: 2em;
+        }
+      }
+    }
+
+    .highlight {
+      padding: 2em;
+      margin-bottom: 2em;
+      background: #eee;
+
+      code {
+        display: block;
+        overflow: auto;
+      }
+    }
+
+    time + span:before {
+      content: '- ';
+    }
+
+    .home {
+      article {
+        margin-bottom: 2.5em;
+
+        > h2 {
+          &:before {
+            content: '~ ';
+          }
+
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      word-spacing: 0.5em;
+    }
+  }
+
+  footer {
+    padding: 1em;
+    text-align: center;
+  }
+}
