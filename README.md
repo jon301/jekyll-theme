@@ -37,6 +37,33 @@ Jekyll Boilerplate is a lightweight and cleaned up version of the initial [Jekyl
 * A `lang` attribute has been added to the default layout.
 * A `<main>` element has been added to the default layout.
 
+## Installation
+
+### Update rubygems
+
+* `sudo gem install rubygems-update`
+* `sudo update_rubygems`
+* `sudo gem update --system`
+
+### Install jekyll and bundler
+
+* `brew remove ruby`
+* `brew install ruby`
+* `sudo gem install jekyll bundler`
+
+### Install project gems
+
+* `bundle install`
+
+### Update project gems
+
+* `bundle update`
+* `git commit -am "Commit Gemfile.lock"`
+
+### Serve project
+
+* `bundle exec jekyll serve`
+
 ## Credits
 
 * [Jekyll](https://jekyllrb.com/)
