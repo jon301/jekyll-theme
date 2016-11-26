@@ -73,26 +73,6 @@ body {
     time + span:before {
       content: '- ';
     }
-
-    .home {
-      article {
-        margin-bottom: 2.5em;
-
-        > h2 {
-          &:before {
-            content: '~ ';
-          }
-
-          a {
-            text-decoration: none;
-          }
-        }
-      }
-    }
-
-    .pagination {
-      word-spacing: 0.5em;
-    }
   }
 
   footer {

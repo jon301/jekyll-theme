@@ -3,39 +3,41 @@ layout: default
 title: Home
 order: 1
 ---
-<section class="posts">
+<div class="home">
+  <section class="posts">
 
-  {% for post in paginator.posts %}
-    <article>
-      <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+    {% for post in paginator.posts %}
+      <article>
+        <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
 
-      {% if post.categories.size > 0 %}
-        <span>Posted in
-          {% for category in post.categories %}
-            <a href="{{ site.url }}/categories/#{{category}}">{{ category }}</a>
-            {% unless forloop.last %}, {% endunless %}
-          {% endfor %}
-        </span>
-      {% endif %}
-    </article>
-  {% endfor %}
+        {% if post.categories.size > 0 %}
+          <span>Posted in
+            {% for category in post.categories %}
+              <a href="{{ site.url }}/categories/#{{category}}">{{ category }}</a>
+              {% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          </span>
+        {% endif %}
+      </article>
+    {% endfor %}
 
-</section>
-
-{% if paginator.total_pages > 1 %}
-  <section class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-    {% else %}
-      <span class="inactive previous">Previous</span>
-    {% endif %}
-
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% else %}
-      <span class="inactive next">Next</span>
-    {% endif %}
   </section>
-{% endif %}
+
+  {% if paginator.total_pages > 1 %}
+    <section class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+      {% else %}
+        <span class="inactive previous">Previous</span>
+      {% endif %}
+
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+      {% else %}
+        <span class="inactive next">Next</span>
+      {% endif %}
+    </section>
+  {% endif %}
+</div>
