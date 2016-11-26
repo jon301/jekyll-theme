@@ -5,16 +5,13 @@ permalink: "/archive/"
 order: 4
 exclude: true
 ---
+<h3>An archive of posts sorted by date</h3>
 
-<div class="archive">
-  <h3>An archive of posts sorted by date</h3>
-
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
+    </li>
+  {% endfor %}
+</ul>
