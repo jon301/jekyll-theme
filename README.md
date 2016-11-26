@@ -64,6 +64,13 @@ Jekyll Boilerplate is a lightweight and cleaned up version of the initial [Jekyl
 
 * `bundle exec jekyll serve`
 
+### Update project with original version
+
+* `git remote add HugoGiraudel https://github.com/HugoGiraudel/jekyll-boilerplate.git`
+* `git fetch HugoGiraudel`
+* `git rebase HugoGiraudel/master`
+* `git push -f origin master`
+
 ## Credits
 
 * [Jekyll](https://jekyllrb.com/)
