@@ -76,7 +76,16 @@ body {
   }
 
   footer {
-    padding: 1em;
+    padding: 3em 1em 2em;
     text-align: center;
+
+    ul {
+      list-style: none;
+      word-spacing: 2em;
+
+      li {
+        display: inline-block;
+      }
+    }
   }
 }

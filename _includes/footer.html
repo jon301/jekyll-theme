@@ -1,1 +1,10 @@
-<footer>&copy; {{ site.time | date: '%Y' }} by {{ site.author }}.</footer>
+<footer>
+  <ul>
+    {% if site.social.linkedin %}<li><a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" target="_blank">LinkedIn</a></li>{% endif %}
+    {% if site.social.twitter %}<li><a href="https://twitter.com/{{ site.social.twitter }}" target="_blank">Twitter</a></li>{% endif %}
+    {% if site.social.github %}<li><a href="https://github.com/{{ site.social.github }}" target="_blank">GitHub</a></li>{% endif %}
+    <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank">RSS</a></li>
+  </ul>
+
+  <div>&copy; {{ site.time | date: '%Y' }} by {{ site.author }}.</div>
+</footer>
